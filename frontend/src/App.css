@@ -1,0 +1,409 @@
+/* WinWinKit Dark Theme Foundation */
+:root {
+  /* Dark Theme Base - Minecraft Style */
+  --bg-primary: #0a101a;         /* fundo principal escuro */
+  --bg-secondary: #151d2b;       /* fundo secundário azul escuro */
+  --bg-tertiary: #232c3d;        /* fundo terciário azul/cinza escuro */
+  
+  /* Text Hierarchy */
+  --text-primary: #eaf6ff;       /* texto claro azulado */
+  --text-secondary: #b7c9e6;     /* texto secundário */
+  --text-muted: #6d7a8a;         /* texto apagado */
+  
+  /* Border System */
+  --border-primary: #22304a;
+  --border-subtle: #22304a;
+  
+  /* MAIN ACCENT - Minecraft Green */
+  --accent-primary: #6ecaff;     /* azul neon para destaque */
+  --accent-hover: #4ea3e6;
+  --accent-pressed: #3576a8;
+  --accent-bg: #1a2333;
+  
+  /* Secondary Accent */
+  --accent-purple: #3c6e9e;      /* azul para botões secundários */
+}
+
+/* Base Styles */
+body {
+  font-family: 'Press Start 2P', monospace, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0a101a;
+  background-image: none;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Utility Classes */
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-tertiary { background-color: var(--bg-tertiary); }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+
+.border-subtle { border-color: var(--border-subtle); }
+
+.text-accent-primary { color: var(--accent-primary); }
+.bg-accent-bg { background-color: var(--accent-bg); }
+
+/* Button Styles */
+.btn-primary {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 52px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(218, 255, 1, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  background: var(--accent-pressed);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-primary);
+  border-radius: 12px;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 52px;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: var(--accent-bg);
+  transform: translateY(-1px);
+}
+
+/* Card Styles */
+.feature-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+/* Typography Scale */
+.display-lg { 
+  font-size: 60px; 
+  font-weight: 700; 
+  line-height: 1.0; 
+  letter-spacing: -0.02em; 
+}
+
+.display-md { 
+  font-size: 48px; 
+  font-weight: 700; 
+  line-height: 1.1; 
+  letter-spacing: -0.015em; 
+}
+
+.h1 { font-size: 32px; font-weight: 600; line-height: 1.2; }
+.h2 { font-size: 24px; font-weight: 600; line-height: 1.3; }
+.h3 { font-size: 20px; font-weight: 600; line-height: 1.4; }
+.h4 { font-size: 18px; font-weight: 600; line-height: 1.4; }
+
+.body-lg { 
+  font-size: 18px; 
+  font-weight: 400; 
+  line-height: 1.6; 
+  color: var(--text-secondary); 
+}
+
+.body-md { 
+  font-size: 16px; 
+  font-weight: 400; 
+  line-height: 1.6; 
+  color: var(--text-secondary); 
+}
+
+.body-sm { 
+  font-size: 14px; 
+  font-weight: 400; 
+  line-height: 1.5; 
+  color: var(--text-muted); 
+}
+
+/* Animations */
+.hover-lift:hover {
+  transform: translateY(-4px);
+  transition: transform 0.2s ease;
+}
+
+.glow-effect {
+  box-shadow: 0 0 20px rgba(218, 255, 1, 0.3);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+/* Footer Styles */
+.footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  padding: 80px 24px 40px;
+  margin-top: 120px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 64px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-social-link:hover {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+}
+
+/* Minecraft Character Styles */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+  .display-lg { font-size: 36px; }
+  .display-md { font-size: 32px; }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .feature-card {
+    padding: 24px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background: #b7a26a;
+}
+::-webkit-scrollbar-thumb {
+    background: #6d5433;
+}
+
+input, textarea {
+    font-family: 'Press Start 2P', monospace;
+    border-radius: 0;
+    border: 2px solid #6d5433;
+    background: #fff;
+    padding: 8px;
+}
+
+label {
+    font-family: 'Press Start 2P', monospace;
+    color: #222;
+}
+
+/* Ajuste para o container do modelo */
+.model-minecraft {
+    background: #151d2b;
+    border: 4px solid #22304a;
+    border-radius: 0;
+    box-shadow: 0 4px #22304a;
+    margin: 0 auto;
+    padding: 8px;
+    width: 416px;
+    height: 416px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.minecraft-container {
+    background: #151d2b;
+    border: 4px solid #22304a;
+    border-radius: 0;
+    box-shadow: 0 8px #22304a, 0 0 0 8px #232c3d inset;
+    padding: 32px;
+    margin: 32px auto;
+    max-width: 480px;
+}
+
+.minecraft-btn {
+    font-family: 'Press Start 2P', monospace;
+    background: #22304a;
+    color: #eaf6ff;
+    border: 4px solid #6ecaff;
+    border-radius: 0;
+    padding: 12px 24px;
+    margin: 8px 0;
+    cursor: pointer;
+    box-shadow: 0 4px #222;
+    transition: background 0.2s;
+}
+.minecraft-btn:hover {
+    background: #3576a8;
+}
+
+/* Estilos da Seção Hero com Tema Minecraft */
+.hero-minecraft {
+    position: relative;
+    width: 100%;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 48px 0 48px 5vw;
+    box-sizing: border-box;
+    /* Remove qualquer gradiente antigo, mantém só a imagem Minecraft */
+    background: url('https://wallpapercave.com/wp/wp2754110.jpg') center/cover no-repeat;
+}
+
+.hero-minecraft::before {
+    /* Remove overlay cinza, deixa mais transparente e natural */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(34, 49, 63, 0.18); /* overlay mais leve, azul-esverdeado, só para contraste */
+    z-index: 1;
+}
+
+.hero-minecraft-content {
+    position: relative;
+    z-index: 2;
+    color: #eaf6ff;
+    text-shadow: 2px 2px 8px #000, 0 0 8px #22304a;
+}
+
+/* Hero section background override */
+.hero-minecraft-bg {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: url("C:/Users/matem/Downloads/HTTPS/app/frontend/public/textures/minecraftHeroSection.png") center/cover no-repeat;
+  position: relative;
+  background-color: transparent !important;
+  z-index: 0;
+}
+
+.hero-minecraft-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 16, 26, 0.45);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.model-minecraft-hero {
+    background: rgba(21, 29, 43, 0.92);
+    border-radius: 18px;
+    border: 4px solid #22304a;
+    box-shadow: 0 8px 32px 0 rgba(34,48,74,0.25);
+    padding: 16px;
+    width: 416px;
+    height: 416px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .model-minecraft-hero {
+        width: 320px;
+        height: 320px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 767px) {
+    .model-minecraft-hero {
+        width: 220px;
+        height: 220px;
+        padding: 4px;
+        margin-top: 32px;
+    }
+}
+
